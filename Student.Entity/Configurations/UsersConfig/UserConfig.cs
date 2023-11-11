@@ -8,7 +8,6 @@ namespace Student.Entity.Configurations.UsersConfig
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-
             builder.HasQueryFilter(m => EF.Property<bool>(m, "IsDeleted") == false);
         }
     }

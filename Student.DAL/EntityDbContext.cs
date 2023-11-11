@@ -11,11 +11,17 @@ namespace Student.DAL
     public class EntityDbContext : DbContext, IEntityDbContext
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
+        public EntityDbContext()
+        {
+
+        }
         public EntityDbContext(DbContextOptions<EntityDbContext> options) : base(options)
         {
             _httpContextAccessor = new HttpContextAccessor();
         }
         public DbSet<User> Users { get; set; }
+        public DbSet<Class> Classes { get; set; }
+        public DbSet<Course> Courses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -9,7 +9,7 @@ namespace Student.Extensions
     {
         internal static void ConfigureJwtToken(this IServiceCollection services, IHostEnvironment environment)
         {
-            var secretKey = "mysupersecret_secretkey!PT";
+            var secretKey = "Student_API_Project_Corsues_mysupersecret_secretkey!PT";
             var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secretKey));
             var tokenValidationParameters = new TokenValidationParameters
             {

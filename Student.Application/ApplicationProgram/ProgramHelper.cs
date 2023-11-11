@@ -4,6 +4,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.DependencyInjection;
 using Student.Application.Middlewares;
 using Student.BLL.Mediator;
+using Student.BLL.Services.CourseService.Services;
 using Student.BLL.Services.UserService.Services;
 using Student.DAL;
 using Student.DAL.Repository;
@@ -45,7 +46,10 @@ namespace Student.Application.ApplicationProgram
             services.AddScoped<IUserService, UserService>()
                            .AddScoped(x => new Lazy<IUserService>(x.GetRequiredService<IUserService>));
 
-            
+            services.AddScoped<ICourseService, CourseService>()
+                           .AddScoped(x => new Lazy<ICourseService>(x.GetRequiredService<ICourseService>));
+
+
 
             #endregion
 

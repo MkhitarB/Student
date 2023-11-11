@@ -1,4 +1,5 @@
 ﻿using Student.Entity.Entities.BaseEntities;
+using Student.Infrastructure.Enums.EntityEnums;
 
 namespace Student.Entity.Entities
 {
@@ -12,5 +13,8 @@ namespace Student.Entity.Entities
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public string Password { get; set; }
+        public UserType Type { get; set; }
+
+        public virtual ICollection<Course> Courses { get; set; }
     }
 }
